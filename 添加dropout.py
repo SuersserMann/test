@@ -90,11 +90,11 @@ class Dataset1(data.Dataset):
         return text_id, text, events
 
 
-b_train_dataset = Dataset1('123/random_train.jsonl')
-b_val_dataset = Dataset1('123/random_val.jsonl')
-train_dataset = Dataset('123/train.jsonl')
-val_dataset = Dataset('123/dev.jsonl')
-da_train = Dataset('123/da_train.jsonl')
+b_train_dataset = Dataset1('/mnt/data/random_train.jsonl')
+b_val_dataset = Dataset1('/mnt/data/random_val.jsonl')
+train_dataset = Dataset('/mnt/data/train.jsonl')
+val_dataset = Dataset('/mnt/data/dev.jsonl')
+da_train = Dataset('/mnt/data/da_train.jsonl')
 # test_dataset = Dataset('testA.jsonl')
 b_train_dataset = [item for item in b_train_dataset]
 b_val_dataset = [item for item in b_val_dataset]
@@ -525,8 +525,8 @@ def train_model(learning_rate, num_epochs):
         print(f"当前模型已保存到：{model_save_path}")
 
 
-learning_rate = 1e-5
-num_epochs = 2
+learning_rate = 1e-3
+num_epochs = 10
 
 test_f1, model_x = train_model(learning_rate, num_epochs)
 
